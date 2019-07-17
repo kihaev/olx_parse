@@ -76,7 +76,7 @@ def get_animals_info(start_page, table_name):
             soup_ad = BeautifulSoup(driver.page_source, "html.parser")
             phone_number = soup_ad.find("strong",{"class":"xx-large"}).text
             breed = soup_ad.find_all("td", {"class":"value"})[1].text.strip()
-            print(ad_name + "\n" + ad_url +"\n"+ price +"\n"+ phone_number + "\n" + breed)
+            #print(ad_name + "\n" + ad_url +"\n"+ price +"\n"+ phone_number + "\n" + breed)
             #inserting info
             insert_into_db(table_name, ad_name, ad_url, price, phone_number, breed)
 
