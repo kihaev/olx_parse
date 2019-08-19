@@ -5,6 +5,19 @@ import pickle
 import sqlite3
 
 
+#constants    
+database_path = "mydatabase_animals.db"
+table_name_cats = "cats"
+table_name_dogs = "dogs"
+driver_path = "C:\\Users\\yurak\\Desktop\\test\\geckodriver.exe"
+cookies_path = "cookies.pkl"
+starting_page_dogs = "https://www.olx.ua/zhivotnye/sobaki/kiev/q-Печерский/?search%5Border%5D=created_at%3Adesc"
+starting_page_cats = "https://www.olx.ua/zhivotnye/koshki/kiev/q-Печерский/?search%5Border%5D=created_at%3Adesc"
+authorization_page = "https://www.olx.ua/account/?ref%5B0%5D%5Baction%5D=myaccount&ref%5B0%5D%5Bmethod%5D=index"
+conn, mycursor = conn_db(database_path)
+driver = sel_init(driver_path, authorization_page)
+
+
 # connection to db
 def conn_db(path):
     connx = sqlite3.connect(path)
@@ -101,17 +114,4 @@ def start():
     show_table_rows(table_name_cats)
 
     
-#constants    
-database_path = "mydatabase_animals.db"
-table_name_cats = "cats"
-table_name_dogs = "dogs"
-driver_path = "C:\\Users\\yurak\\Desktop\\test\\geckodriver.exe"
-cookies_path = "cookies.pkl"
-starting_page_dogs = "https://www.olx.ua/zhivotnye/sobaki/kiev/q-Печерский/?search%5Border%5D=created_at%3Adesc"
-starting_page_cats = "https://www.olx.ua/zhivotnye/koshki/kiev/q-Печерский/?search%5Border%5D=created_at%3Adesc"
-authorization_page = "https://www.olx.ua/account/?ref%5B0%5D%5Baction%5D=myaccount&ref%5B0%5D%5Bmethod%5D=index"
-conn, mycursor = conn_db(database_path)
-driver = sel_init(driver_path, authorization_page)
-
-
 start()
