@@ -5,7 +5,7 @@ import pickle
 import sqlite3
 
 
-#constants    
+# constants    
 database_path = "mydatabase_animals.db"
 table_name_cats = "cats"
 table_name_dogs = "dogs"
